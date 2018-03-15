@@ -10,15 +10,21 @@ import learning.patterns.creational.builder.products.ToyCar;
 import learning.patterns.creational.builder.сomponents.Engine;
 
 /**
- * Director constructs products using a Builder object. Usually, client assigns a builder instance to a director
- * just once via constructor parameters. Then director uses that single builder object for all further construction.
- * But there is an alternative when a builder is passed to the main production method of a director.
+ * TODO translate to english
+ * Проблема: Представьте сложный объект, требующий кропотливой пошаговой инициализации множества
+ * полей и вложенных объектов. Код инициализации таких объектов обычно спрятан внутри монструозного
+ * конструктора с десятком параметров. Либо ещё хуже — распылён по всему клиентскому коду.
  *
- * Note, that Builder does not require creating a director class. The separate director class is
- * handy when you have several product variations that require different construction processes.
- * Director can encapsulate all that code inside a single class.
+ * Например, давайте подумаем о том, как создать объект Дом. Чтобы построить стандартный дом, нужно
+ * поставить 4 стены, установить двери, вставить пару окон и постелить крышу. Но что, если вы хотите
+ * дом побольше да посветлее, имеющий сад, бассейн, и прочее добро?
  *
- * Also
+ * Самое простое решение — расширить класс Дом, создав подклассы для всех комбинаций параметров дома.
+ * Проблема такого подхода — это громадное количество классов, которые вам придётся создать.
+ * Каждый новый параметр, вроде цвета обоев или материала кровли, заставит вас создавать всё больше и больше
+ * классов для перечисления всех возможных вариантов.
+ *
+ * For more example:
  * @see java.lang.StringBuilder#append
  * @see java.lang.StringBuffer#append
  * @see javax.swing.GroupLayout.Group#addComponent
