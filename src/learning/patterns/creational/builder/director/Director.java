@@ -20,6 +20,15 @@ public class Director {
 		builder.setGPSNavigator(new GPSNavigator());
 	}
 
+	public void constructSportsCar(Builder builder, Engine engine) {
+		builder.setType(Type.SPORTS_CAR);
+		builder.setSeats(2);
+		builder.setEngine(engine);
+		builder.setTransmission(Transmission.SEMI_AUTOMATIC);
+		builder.setTripComputer(new TripComputer());
+		builder.setGPSNavigator(new GPSNavigator());
+	}
+
 	public void constructCityCar(Builder builder) {
 		builder.setType(Type.CITY_CAR);
 		builder.setSeats(2);
