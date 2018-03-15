@@ -15,7 +15,9 @@ public class XMLExportVisitor implements Visitor {
 		StringBuilder sb = new StringBuilder();
 		for (Shape shape : args) {
 			sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + "\n");
+
 			sb.append(shape.accept(this) + "\n");
+
 			System.out.println(sb.toString());
 			sb.setLength(0);
 		}
