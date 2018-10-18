@@ -4,6 +4,7 @@ package learning.patterns.creational.requied.fields.builder;
  * @author Maksim_Likhanov
  */
 public class Address {
+	private String name;
 	private String protocol;
 	private String url;
 	private int port;
@@ -12,6 +13,7 @@ public class Address {
 
 	// only builder should be able to create an instance
 	private Address(Builder builder) {
+		this.name = builder.name;
 		this.protocol = builder.protocol;
 		this.url = builder.url;
 		this.port = builder.port;
@@ -23,7 +25,8 @@ public class Address {
 		return new Builder();
 	}
 
-	public static class Builder implements Url, Port, Build{
+	public static class Builder implements Url, Port, Name, Build{
+		private String name;
 		private String protocol;
 		private String url;
 		private int port;
@@ -31,8 +34,13 @@ public class Address {
 		private String description;
 
 		/** Mandatory, must be followed by {@link Port#port(int)}  */
-		public Port url(String url) {
+		public Name url(String url) {
 			this.url = url;
+			return this;
+		}
+
+		public Port name(String name) {
+			this.name = name;
 			return this;
 		}
 
@@ -67,7 +75,11 @@ public class Address {
 	}
 
 	interface Url {
-		public Port url(String url);
+		public Name url(String url);
+	}
+
+	interface Name{
+		public Port name(String name);
 	}
 
 	interface Port {
@@ -81,5 +93,27 @@ public class Address {
 		public Address build();
 	}
 
-	// TODO: add some get methods here...
+	public String getProtocol() {
+		return protocol;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getName() {
+		return name;
+	}
 }
