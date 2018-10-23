@@ -8,7 +8,6 @@ import java.util.TimeZone;
 public class App {
 	public static void main(String[] args) {
 
-
 		Calendar time = new GregorianCalendar();
 		time.set(2010, Calendar.JANUARY, 1, 7, 20, 0);
 		int hour = time.get(Calendar.HOUR_OF_DAY);
@@ -16,7 +15,8 @@ public class App {
 
 		System.out.println(hour + " " + minute);
 	}
-	public static void test(){
+
+	public static void test() {
 		// get the supported ids for GMT-08:00 (Pacific Standard Time)
 		String[] ids = TimeZone.getAvailableIDs(-8 * 60 * 60 * 1000);
 		// if no ids were returned, support.something is wrong. get out.
@@ -36,8 +36,8 @@ public class App {
 		// create a GregorianCalendar with the Pacific Daylight time zone
 		// and the current learning.date and time
 		Calendar calendar = new GregorianCalendar(pdt);
-//		Date trialTime = new Date(); TODO
-//		calendar.setTime(trialTime);
+		//		Date trialTime = new Date(); TODO
+		//		calendar.setTime(trialTime);
 
 		// print out a bunch of interesting things
 		System.out.println("ERA: " + calendar.get(Calendar.ERA));
@@ -49,18 +49,15 @@ public class App {
 		System.out.println("DAY_OF_MONTH: " + calendar.get(Calendar.DAY_OF_MONTH));
 		System.out.println("DAY_OF_YEAR: " + calendar.get(Calendar.DAY_OF_YEAR));
 		System.out.println("DAY_OF_WEEK: " + calendar.get(Calendar.DAY_OF_WEEK));
-		System.out.println("DAY_OF_WEEK_IN_MONTH: "
-				+ calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+		System.out.println("DAY_OF_WEEK_IN_MONTH: " + calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
 		System.out.println("AM_PM: " + calendar.get(Calendar.AM_PM));
 		System.out.println("HOUR: " + calendar.get(Calendar.HOUR));
 		System.out.println("HOUR_OF_DAY: " + calendar.get(Calendar.HOUR_OF_DAY));
 		System.out.println("MINUTE: " + calendar.get(Calendar.MINUTE));
 		System.out.println("SECOND: " + calendar.get(Calendar.SECOND));
 		System.out.println("MILLISECOND: " + calendar.get(Calendar.MILLISECOND));
-		System.out.println("ZONE_OFFSET: "
-				+ (calendar.get(Calendar.ZONE_OFFSET)/(60*60*1000)));
-		System.out.println("DST_OFFSET: "
-				+ (calendar.get(Calendar.DST_OFFSET)/(60*60*1000)));
+		System.out.println("ZONE_OFFSET: " + (calendar.get(Calendar.ZONE_OFFSET) / (60 * 60 * 1000)));
+		System.out.println("DST_OFFSET: " + (calendar.get(Calendar.DST_OFFSET) / (60 * 60 * 1000)));
 
 		System.out.println("Current Time, with hour reset to 3");
 		calendar.clear(Calendar.HOUR_OF_DAY); // so doesn't override
@@ -74,17 +71,14 @@ public class App {
 		System.out.println("DAY_OF_MONTH: " + calendar.get(Calendar.DAY_OF_MONTH));
 		System.out.println("DAY_OF_YEAR: " + calendar.get(Calendar.DAY_OF_YEAR));
 		System.out.println("DAY_OF_WEEK: " + calendar.get(Calendar.DAY_OF_WEEK));
-		System.out.println("DAY_OF_WEEK_IN_MONTH: "
-				+ calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+		System.out.println("DAY_OF_WEEK_IN_MONTH: " + calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
 		System.out.println("AM_PM: " + calendar.get(Calendar.AM_PM));
 		System.out.println("HOUR: " + calendar.get(Calendar.HOUR));
 		System.out.println("HOUR_OF_DAY: " + calendar.get(Calendar.HOUR_OF_DAY));
 		System.out.println("MINUTE: " + calendar.get(Calendar.MINUTE));
 		System.out.println("SECOND: " + calendar.get(Calendar.SECOND));
 		System.out.println("MILLISECOND: " + calendar.get(Calendar.MILLISECOND));
-		System.out.println("ZONE_OFFSET: "
-				+ (calendar.get(Calendar.ZONE_OFFSET)/(60*60*1000))); // in hours
-		System.out.println("DST_OFFSET: "
-				+ (calendar.get(Calendar.DST_OFFSET)/(60*60*1000))); // in hours
+		System.out.println("ZONE_OFFSET: " + (calendar.get(Calendar.ZONE_OFFSET) / (60 * 60 * 1000))); // in hours
+		System.out.println("DST_OFFSET: " + (calendar.get(Calendar.DST_OFFSET) / (60 * 60 * 1000))); // in hours
 	}
 }
