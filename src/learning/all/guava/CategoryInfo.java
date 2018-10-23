@@ -62,23 +62,23 @@ public class CategoryInfo implements Comparable<CategoryInfo> {
 		return null;
 	}
 
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (obj == null || getClass() != obj.getClass()) {
-//			return false;
-//		}
-//		CategoryInfo other = (CategoryInfo) obj;
-//		return Objects.equal(id, other.id) &&
-//				Objects.equal(parentId, other.parentId) &&
-//				Objects.equal(name, other.name);
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return MoreObjects.toStringHelper(this)
-//				.add("id", id)
-//				.add("parentId", parentId)
-//				.add("name", name)
-//				.toString();
-//	}
+	//	@Override
+	//	public boolean equals(Object obj) {
+	//		if (obj == null || getClass() != obj.getClass()) {
+	//			return false;
+	//		}
+	//		CategoryInfo other = (CategoryInfo) obj;
+	//		return Objects.equal(id, other.id) &&
+	//				Objects.equal(parentId, other.parentId) &&
+	//				Objects.equal(name, other.name);
+	//	}
+	//
+	//	@Override
+	//	public String toString() {
+	//		return MoreObjects.toStringHelper(this)
+	//				.add("id", id)
+	//				.add("parentId", parentId)
+	//				.add("name", name)
+	//				.toString();
+	//	}
 }

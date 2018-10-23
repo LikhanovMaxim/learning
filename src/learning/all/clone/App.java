@@ -14,16 +14,14 @@ public class App {
 
 		manager.setBean(b);
 
-
 		Bean c = new Bean();
 		c.setA(4);
 		c.setB("sadasdas");
 
 		//TODO copy c to b
-//		b = (Bean) c.clone(); // не подходит
+		//		b = (Bean) c.clone(); // не подходит
 
-//		SerializationUtils.clone()
-
+		//		SerializationUtils.clone()
 
 		System.out.println(b.getA());
 		System.out.println(b.getB());
@@ -31,12 +29,11 @@ public class App {
 		System.out.println(manager.getBean().getA());
 		System.out.println(manager.getBean().getB());
 
-
 	}
 
 }
 
-class Manager{
+class Manager {
 	String str;
 	Bean bean;
 
@@ -58,14 +55,19 @@ class Manager{
 	}
 }
 
-class Bean implements Cloneable{
+class Bean implements Cloneable {
 	Integer a;
 
-	Bean(){};
-	Bean(Bean copy){
+	Bean() {
+	}
+
+	;
+
+	Bean(Bean copy) {
 		a = copy.getA();
 		b = copy.getB();
 	}
+
 	public int getA() {
 		return a;
 	}
@@ -85,9 +87,8 @@ class Bean implements Cloneable{
 	private String b;
 
 	@Override
-	public Object clone() throws CloneNotSupportedException{
-		return  super.clone();
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
-
 
 }

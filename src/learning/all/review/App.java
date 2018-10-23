@@ -9,8 +9,8 @@ public class App {
 	}
 }
 
-final class Util{
-	public static void turbo(){
+final class Util {
+	public static void turbo() {
 		System.out.println("dsad");
 	}
 }

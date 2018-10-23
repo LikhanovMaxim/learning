@@ -33,6 +33,9 @@ public class Address {
 		private String path;
 		private String description;
 
+		/** for deprecate this: Address address2 = new Address.Builder().build(); */
+		private Builder(){}
+
 		/** Mandatory, must be followed by {@link Port#port(int)}  */
 		public Name url(String url) {
 			this.url = url;
