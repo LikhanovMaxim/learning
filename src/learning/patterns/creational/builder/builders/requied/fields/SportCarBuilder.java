@@ -11,7 +11,7 @@ import learning.patterns.creational.builder.сomponents.TripComputer;
  * @author Maksim_Likhanov
  */
 
-//TODO!!!!!!!!!!!!!!!!! Add a require field
+//TODO!!!!!!!!!!!!!!!!! Add a require field ///
 public class SportCarBuilder implements Builder {
 	private int countTurbine;
 	private Type type;
