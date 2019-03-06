@@ -13,11 +13,11 @@ public class App {
 	}
 
 	public void bla() {
-		System.out.println("from App");
+		System.out.println("from Firest");
 	}
 
 	public void pat() {
-		System.out.println("pat from App");
+		System.out.println("pat from Firest");
 	}
 }
 
