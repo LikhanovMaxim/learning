@@ -7,6 +7,6 @@ public interface A {
 		return this.groupID == ((A)o).groupID;
 	}
 	static void print(){
-		System.out.println("App");
+		System.out.println("Firest");
 	}
 }
