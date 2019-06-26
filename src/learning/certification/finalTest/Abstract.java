@@ -1,4 +1,4 @@
-package learning.sertification.finalTest;
+package learning.certification.finalTest;
 
 public abstract class Abstract {
 	public static void write(){

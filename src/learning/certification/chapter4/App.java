@@ -1,4 +1,4 @@
-package learning.sertification.chapter4;
+package learning.certification.chapter4;
 
 public class App {
 	public static void main(String[] args) {

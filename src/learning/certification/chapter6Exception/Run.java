@@ -1,4 +1,4 @@
-package learning.sertification.chapter6Exception;
+package learning.certification.chapter6Exception;
 
 import java.util.NoSuchElementException;
 

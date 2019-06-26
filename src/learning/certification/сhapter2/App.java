@@ -1,4 +1,4 @@
-package learning.sertification.сhapter2;
+package learning.certification.сhapter2;
 
 import java.util.ArrayList;
 import java.util.Collection;
