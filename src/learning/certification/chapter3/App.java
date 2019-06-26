@@ -1,4 +1,4 @@
-package learning.sertification.chapter3;
+package learning.certification.chapter3;
 
 import java.time.LocalDate;
 import java.time.Month;
