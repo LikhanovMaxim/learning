@@ -1,4 +1,4 @@
-package learning.guava.join;
+package learning.libs.guava.join;
 
 import com.google.common.base.Splitter;
 
