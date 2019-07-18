@@ -1,4 +1,4 @@
-package learning.guava;
+package learning.libs.guava;
 
 //import com.google.common.base.MoreObjects;
 //import com.google.common.base.Objects;
