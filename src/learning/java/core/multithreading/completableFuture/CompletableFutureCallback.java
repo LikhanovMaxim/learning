@@ -1,10 +1,28 @@
 package learning.java.core.multithreading.completableFuture;
 
+import com.google.common.collect.ImmutableList;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class CompletableFutureCallback {
     public static void main(String[] args) {
+        smth();
+//        smth2();
+//        example_1();
+    }
+
+    private static void smth2() {
+        List<String> list = new ArrayList<String>(Arrays.asList("one", "two", "three"));
+        List<String> unmodifiableList = Collections.unmodifiableList(list);
+        unmodifiableList.add("four");
+    }
+
+    private static void example_1() {
         long started = System.currentTimeMillis();
 
         CompletableFuture<String> data = createCompletableFuture()
@@ -32,4 +50,9 @@ public class CompletableFutureCallback {
         return result;
     }
 
+    public static void smth() {
+        List<String> list = new ArrayList<String>(Arrays.asList("one", "two", "three"));
+        List<String> unmodifiableList = ImmutableList.copyOf(list);
+        unmodifiableList.add("four");
+    }
 }
