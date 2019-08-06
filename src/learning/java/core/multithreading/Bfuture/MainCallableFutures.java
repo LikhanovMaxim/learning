@@ -1,9 +1,16 @@
-package learning.java.core.multithreading.future;
+package learning.java.core.multithreading.Bfuture;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
+/**
+ * https://www.vogella.com/tutorials/JavaConcurrency/article.html#futures-and-callables
+ */
 public class MainCallableFutures {
     private static final int NTHREDS = 10;
 

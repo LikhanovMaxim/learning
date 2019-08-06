@@ -1,4 +1,4 @@
-package learning.java.core.multithreading.simple;
+package learning.java.core.multithreading.Asimple;
 
 /**
  * MyRunnable will count the sum of the number from 1 to the parameter

@@ -1,8 +1,11 @@
-package learning.java.core.multithreading.simple;
+package learning.java.core.multithreading.Asimple;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://www.vogella.com/tutorials/JavaConcurrency/article.html#threads-in-java
+ */
 public class MainOldWay {
 
     public static void main(String[] args) {

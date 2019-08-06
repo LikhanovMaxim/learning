@@ -1,4 +1,4 @@
-package learning.java.core.multithreading.simple;
+package learning.java.core.multithreading.Asimple;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
