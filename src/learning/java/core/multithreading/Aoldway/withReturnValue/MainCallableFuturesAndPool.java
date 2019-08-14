@@ -1,4 +1,4 @@
-package learning.java.core.multithreading.Bfuture;
+package learning.java.core.multithreading.Aoldway.withReturnValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 /**
  * https://www.vogella.com/tutorials/JavaConcurrency/article.html#futures-and-callables
  */
-public class MainCallableFutures {
+public class MainCallableFuturesAndPool {
     private static final int NTHREDS = 10;
 
     public static void main(String[] args) {

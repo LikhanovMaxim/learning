@@ -1,4 +1,4 @@
-package learning.java.core.multithreading.Asimple;
+package learning.java.core.multithreading.Aoldway.woReturnValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * https://www.vogella.com/tutorials/JavaConcurrency/article.html#threads-in-java
  */
-public class MainOldWay {
+public class MainThreadRunnable {
 
     public static void main(String[] args) {
         // We will store the threads so that we can check if they are done
