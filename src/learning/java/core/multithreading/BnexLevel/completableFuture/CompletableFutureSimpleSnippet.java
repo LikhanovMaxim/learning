@@ -1,4 +1,4 @@
-package learning.java.core.multithreading.completableFuture;
+package learning.java.core.multithreading.BnexLevel.completableFuture;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

@@ -1,10 +1,10 @@
-package learning.java.core.multithreading.Asimple;
+package learning.java.core.multithreading.Aoldway.woReturnValue;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class MainExecutors {
+public class MainExecutorServicePool {
     private static final int NTHREDS = 10;
 
     public static void main(String[] args) throws InterruptedException {
