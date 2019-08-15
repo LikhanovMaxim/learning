@@ -16,7 +16,7 @@ public class MainCallableFuturesAndPool {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
-        List<Future<Long>> list = new ArrayList<Future<Long>>();
+        List<Future<Long>> list = new ArrayList<>();
         for (int i = 0; i < 20000; i++) {
             Callable<Long> worker = new MyCallable();
             Future<Long> submit = executor.submit(worker);

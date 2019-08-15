@@ -1,15 +1,24 @@
-package learning.java.core.multithreading.BnexLevel.completableFuture;
+package learning.java.core.multithreading.BnexLevel.completableFuture.firstSimplest;
+
+import learning.java.core.multithreading.BnexLevel.completableFuture.common.UtilsCompletableFuture;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class CompletableFutureSimpleSnippet {
+/**
+ * first example
+ */
+public class CompletableFutureMain {
     public static void main(String[] args) {
+        doItAsync();
+    }
+
+    private static void doItAsync() {
         long started = System.currentTimeMillis();
 
         // configure CompletableFuture
-        CompletableFuture<Integer> futureCount = createCompletableFuture(5000L);
-        CompletableFuture<Integer> futureCount2 = createCompletableFuture(2000L);
+        CompletableFuture<Integer> futureCount = UtilsCompletableFuture.createCompletableFuture(5000L);
+        CompletableFuture<Integer> futureCount2 = UtilsCompletableFuture.createCompletableFuture(2000L);
 
         // continue to do other work
         System.out.println("Took " + (started - System.currentTimeMillis()) + " milliseconds");
@@ -29,19 +38,6 @@ public class CompletableFutureSimpleSnippet {
         } catch (InterruptedException | ExecutionException ex) {
             // Exceptions from the future should be handled here
         }
-    }
-
-    private static CompletableFuture<Integer> createCompletableFuture(Long millis) {
-        CompletableFuture<Integer> futureCount = CompletableFuture.supplyAsync(
-                () -> {
-                    try {
-                        // simulate long running task
-                        Thread.sleep(millis);
-                    } catch (InterruptedException e) {
-                    }
-                    return 20;
-                });
-        return futureCount;
     }
 
 
