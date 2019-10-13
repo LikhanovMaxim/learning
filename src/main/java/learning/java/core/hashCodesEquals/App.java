@@ -1,11 +1,7 @@
 package learning.java.core.hashCodesEquals;
 
 import java.sql.Date;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * 1 для одного и того-же объекта, хеш-код всегда будет одинаковым; 
@@ -14,79 +10,115 @@ import java.util.Objects;
  * 4 если хеш-коды разные, то и объекты гарантированно разные; 
  */
 public class App {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println("Equals and hashCode:");
-		A first = new A("asd", 1, null);
-		A b = new A("asd", 1, null);
-		System.out.println(first.equals(b));
-		System.out.println(first.hashCode() == b.hashCode());
+        System.out.println("Equals and hashCode:");
+//        equalsAndHashCode();
 
-		System.out.println("Only equals:");
-		OnlyEquals onlyEquals = new OnlyEquals("ads", 1, new Date(123));
-		OnlyEquals onlyEquals2 = new OnlyEquals("ads", 1, new Date(123));
-		System.out.println(onlyEquals.equals(onlyEquals2));
-		System.out.println(onlyEquals.hashCode() == onlyEquals2.hashCode());
-
-		Map<String, OnlyEquals> hashmap = new HashMap<>();
-		hashmap.put("ss1", onlyEquals);
-		hashmap.put("ss1_2", onlyEquals);
-		hashmap.put("ss2", onlyEquals2);
-		hashmap.put("ss2_2", onlyEquals2);
-		System.out.println(Arrays.toString(hashmap.entrySet().toArray()));
-		System.out.println(hashmap);
+        System.out.println("Only equals:");
+        onlyEquals();
 //		System.out.println(hashmap.get("ss1") == hashmap.get("ss2"));
 //		System.out.println(hashmap.get("ss1").hashCode() == hashmap.get("ss2").hashCode());
 //		System.out.println(hashmap.get("ss1").equals(hashmap.get("ss2")));
-	}
+    }
+
+    private static void equalsAndHashCode() {
+        EqualsAndHashCode first = new EqualsAndHashCode("asd", 1, null);
+        EqualsAndHashCode second = new EqualsAndHashCode("asd", 1, null);
+        EqualsAndHashCode third = new EqualsAndHashCode("asd", 2, null);
+        System.out.println(first.equals(second));
+        System.out.println(first.hashCode() == second.hashCode());
+        System.out.println(first.hashCode() == third.hashCode());
+    }
+
+    private static void onlyEquals() {
+        OnlyEquals onlyEquals = new OnlyEquals("ads", 1, new Date(123));
+        OnlyEquals onlyEquals2 = new OnlyEquals("ads", 1, new Date(123));
+        OnlyEquals onlyEquals3 = new OnlyEquals("xxx", 1, new Date(123));
+
+
+//        OnlyEqualsChild child = new OnlyEqualsChild("ads", 1, new Date(123), "das");
+//        System.out.println(onlyEquals.equals(child));
+        System.out.println(onlyEquals.equals(onlyEquals2));
+        System.out.println(onlyEquals.hashCode() == onlyEquals2.hashCode());
+
+        Set<OnlyEquals> set = new HashSet<>();
+        set.add(onlyEquals);
+        set.add(onlyEquals2);
+
+//        Should be one, but will be two:
+        System.out.println("Print set: " + set);
+//        Map<String, OnlyEquals> hashmap = new HashMap<>();
+//        hashmap.put("ss1", onlyEquals);
+//        hashmap.put("ss1_2", onlyEquals);
+//        hashmap.put("ss2", onlyEquals2);
+//        hashmap.put("ss2_2", onlyEquals2);
+//        System.out.println(Arrays.toString(hashmap.entrySet().toArray()));
+//        System.out.println(hashmap);
+    }
 }
 
-class OnlyEquals{
-	private String a;
-	private Integer b;
-	private Object d;
+class OnlyEquals {
+    private String a;
+    private Integer b;
+    private Object d;
 
-	public OnlyEquals(String a, Integer b, Object d) {
-		this.a = a;
-		this.b = b;
-		this.d = d;
-	}
+    public OnlyEquals(String a, Integer b, Object d) {
+        this.a = a;
+        this.b = b;
+        this.d = d;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-		OnlyEquals that = (OnlyEquals) o;
-		return Objects.equals(a, that.a) && Objects.equals(b, that.b) && Objects.equals(d, that.d);
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        OnlyEquals that = (OnlyEquals) o;
+        return Objects.equals(a, that.a) && Objects.equals(b, that.b) && Objects.equals(d, that.d);
+    }
 
 }
 
-class A {
-	private String a;
-	private Integer b;
-	private List<String> strings;
+class OnlyEqualsChild extends OnlyEquals {
 
-	public A(String a, Integer b, List<String> strings) {
-		this.a = a;
-		this.b = b;
-		this.strings = strings;
-	}
+    String string;
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-		A a1 = (A) o;
-		return Objects.equals(a, a1.a) && Objects.equals(b, a1.b) && Objects.equals(strings, a1.strings);
-	}
+    public OnlyEqualsChild(String a, Integer b, Object d, String string) {
+        super(a, b, d);
+        this.string = string;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(a, b, strings);
-	}
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+}
+
+class EqualsAndHashCode {
+    private String a;
+    private Integer b;
+    private List<String> strings;
+
+    public EqualsAndHashCode(String a, Integer b, List<String> strings) {
+        this.a = a;
+        this.b = b;
+        this.strings = strings;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        EqualsAndHashCode equalsAndHashCode1 = (EqualsAndHashCode) o;
+        return Objects.equals(a, equalsAndHashCode1.a) && Objects.equals(b, equalsAndHashCode1.b) && Objects.equals(strings, equalsAndHashCode1.strings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b, strings);
+    }
 }
