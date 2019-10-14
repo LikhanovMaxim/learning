@@ -1,4 +1,4 @@
-package learning.java.core.java8;
+package learning.java.core.java8.lambdaExpersion;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 public class FunctionInterfaces {
 
-    Predicate<String> takePredicate() {
+    Predicate<String> isStringLengthMoreThanZero() {
         return s -> s.length() > 0;
     }
 

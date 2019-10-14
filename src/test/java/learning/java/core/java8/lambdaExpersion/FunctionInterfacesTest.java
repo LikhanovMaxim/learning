@@ -1,4 +1,4 @@
-package learning.java.core.java8;
+package learning.java.core.java8.lambdaExpersion;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,9 +9,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FunctionInterfacesTest {
 
@@ -24,7 +22,7 @@ class FunctionInterfacesTest {
 
     @Test
     void predicate() {
-        Predicate<String> predicate = functionInterfaces.takePredicate();
+        Predicate<String> predicate = functionInterfaces.isStringLengthMoreThanZero();
 
         assertTrue(predicate.test("SymbolsAreMoreThanZero"));
         assertFalse(predicate.negate().test("SymbolsAreMoreThanZero, but we use negate"));
@@ -35,6 +33,12 @@ class FunctionInterfacesTest {
 
         Predicate<String> isEmpty = String::isEmpty;
         Predicate<String> isNotEmpty = isEmpty.negate();
+    }
+
+    @Test
+    void function2() {
+        Function<String, String> up = String::toUpperCase;
+        assertEquals(up.apply("asd"), "ASD");
     }
 
     @Test
@@ -53,10 +57,20 @@ class FunctionInterfacesTest {
 
     @Test
     void consumer() {
-        Consumer<Person> birthDay = (p) -> p.age += 1;
+        Consumer<Person> birthDay = p -> p.age += 1;
         Person max = new Person("Max", 34);
         birthDay.accept(max);
         assertEquals(35, max.age);
+    }
+
+    @Test
+    void syntax() {
+//        old way:
+        Function<Integer, Integer> s2 = a -> Utility.calc(a);
+//        method references:
+        Function<Integer, Integer> s = Utility::calc;
+        Integer res = s.apply(23);
+        assertEquals(230, res);
     }
 
     /**TODO
