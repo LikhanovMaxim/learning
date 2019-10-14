@@ -1,4 +1,4 @@
-package learning.java.core.java8;
+package learning.java.core.java8.lambdaExpersion;
 
 public class ChildExample implements Example{
     @Override

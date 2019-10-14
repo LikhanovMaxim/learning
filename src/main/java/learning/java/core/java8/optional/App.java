@@ -1,11 +1,13 @@
-package learning.java.core.optional;
+package learning.java.core.java8.optional;
 
 import java.util.Optional;
 
 public class App {
 
     public static void main(String[] args) {
+        System.out.println("simple:");
         simpleExample();
+        System.out.println("\nhard:");
         hardExampleWithClass();
     }
 
@@ -66,9 +68,9 @@ public class App {
         check(useOfNullableWithNull());
     }
 
-    private static void check(Optional<Double> countBR) {
-        if (countBR.isPresent()) {
-            System.out.println(countBR + " " + countBR.get() + " ");
+    private static void check(Optional<Double> optional) {
+        if (optional.isPresent()) {
+            System.out.println(optional + " " + optional.get() + " ");
         } else {
             System.out.println("It is not present");
         }
