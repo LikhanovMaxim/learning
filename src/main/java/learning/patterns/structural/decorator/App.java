@@ -11,21 +11,21 @@ public class App {
     private static final String OUT_OUTPUT_DEMO_TXT = "out/OutputDemo.txt";
 
     public static void main(String[] args) {
-        System.out.println("Simple file");
+        System.out.println("1) Simple file");
         DataSource simpleFile = new FileDataSource(OUT_OUTPUT_DEMO_TXT);
         writeAndRead(simpleFile);
 
-        System.out.println("\nWith encoding");
+        System.out.println("\n2) With encoding");
         DataSourceDecorator encoded = new EncryptionDecorator(
                 new FileDataSource(OUT_OUTPUT_DEMO_TXT));
         writeAndRead(encoded);
 
-        System.out.println("\nWith encoding and compression");
+        System.out.println("\n3) With encoding and compression");
         DataSourceDecorator compress = new CompressionDecorator(
                 new FileDataSource(OUT_OUTPUT_DEMO_TXT));
         writeAndRead(compress);
 
-        System.out.println("\nWith encoding and compression");
+        System.out.println("\n4) With encoding and compression");
         DataSourceDecorator encodedAndCompress = new CompressionDecorator(
                 new EncryptionDecorator(
                         new FileDataSource(OUT_OUTPUT_DEMO_TXT)));

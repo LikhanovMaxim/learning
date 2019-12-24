@@ -1,4 +1,4 @@
-package learning.java.core.access.modifiers;
+package learning.java.core.keywords.access.modifiers;
 
 /**
  * @author Maksim_Likhanov
