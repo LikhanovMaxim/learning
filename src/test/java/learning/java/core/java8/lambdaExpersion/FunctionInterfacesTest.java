@@ -11,6 +11,10 @@ import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+A Java lambda expression is thus a function which can be created without belonging to any class.
+A Java lambda expression can be passed around as if it was an object and executed on demand.
+ */
 class FunctionInterfacesTest {
 
     private static FunctionInterfaces functionInterfaces;
@@ -52,7 +56,7 @@ class FunctionInterfacesTest {
         Supplier<Person> personSupplier = functionInterfaces.takeSupplier();
 
         assertEquals(new Person(), personSupplier.get());
-        //TODO why do it need?
+        //TODO why does it need?
     }
 
     @Test

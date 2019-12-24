@@ -1,6 +1,6 @@
-package learning.java.core.access.modifiers;
+package learning.java.core.keywords.access.modifiers;
 
-import learning.java.core.access.modifiers.another.NotSamePackage;
+import learning.java.core.keywords.access.modifiers.another.NotSamePackage;
 
 /**
  * @author Maksim_Likhanov
