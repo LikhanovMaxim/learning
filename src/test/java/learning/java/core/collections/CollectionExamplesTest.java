@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -17,6 +19,42 @@ class CollectionExamplesTest {
 
     public static final String FIRST = "first";
     public static final String SECOND = "second";
+
+    private boolean isaBoolean(Set<String> ordersWithException, String o) {
+        return !ordersWithException.contains(o);
+    }
+
+    @Test
+    void liasd(){
+        Set<String> ordersWithException = new HashSet<>();
+
+//		ordersWithException.add("123");
+//		ordersWithException.add("124");
+
+
+        assertTrue(isaBoolean(ordersWithException, "1"));
+    }
+
+    @Test
+    void liasd2(){
+        Set<String> ordersWithException = new HashSet<>();
+
+		ordersWithException.add("123");
+		ordersWithException.add("124");
+
+        assertTrue(isaBoolean(ordersWithException, "1"));
+    }
+
+    @Test
+    void liasd4(){
+        Set<String> ordersWithException = new HashSet<>();
+
+        ordersWithException.add("123");
+        ordersWithException.add("124");
+
+        assertFalse(isaBoolean(ordersWithException, "124"));
+    }
+
 
     /**
      * don't have get methods - only foreach or contains

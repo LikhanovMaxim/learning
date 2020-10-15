@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 public class StreamExample {
     public static void main(String[] args) {
+        newExamples();
 //        createStreams();
 
 //        exmaple1();
@@ -25,6 +26,36 @@ public class StreamExample {
         // и list и newList содержат [a1_new, a2_new, a3_new]
         ads();
 //        intermediate();
+    }
+
+    private static void newExamples() {
+        //1
+        List<String> myList =
+                Arrays.asList("a1", "a2", "b1", "c2", "c1");
+        myList
+                .stream()
+                .filter(s -> s.startsWith("c"))
+                .map(String::toUpperCase)
+                .sorted()
+                .forEach(System.out::println);
+        //2
+        Arrays.asList("a1", "a2", "a3")
+                .stream()
+                .findFirst()
+                .ifPresent(System.out::println);  // a1
+        //3
+        Stream.of("a1", "a2", "a3")
+                .findFirst()
+                .ifPresent(System.out::println);  // a1
+//        4
+        IntStream.range(1, 4)
+                .forEach(System.out::println);
+//        5
+        Arrays.stream(new int[] {1, 2, 3})
+                .map(n -> 2 * n + 1)
+                .average()
+                .ifPresent(System.out::println);  // 5.0
+
     }
 
     private static void ads(){
