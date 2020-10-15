@@ -18,7 +18,9 @@ public class App {
 	private static boolean isZero2(double value) {
 		return Math.abs(value) < 2 * Double.MIN_VALUE;
 	}
+
 	//	public static void varags(int... nums, String string){}
+
 	private static boolean isZero(double value) {
 		return Double.compare(value, 0.0) != 0;
 	}

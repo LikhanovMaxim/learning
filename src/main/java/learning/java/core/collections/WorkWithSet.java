@@ -2,6 +2,7 @@ package learning.java.core.collections;
 
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -27,6 +28,12 @@ public class WorkWithSet {
         });
         hashSet.forEach(System.out::println);
         System.out.println(count);
+
+        System.out.println("Old way for each");
+        Iterator<String> iterable = hashSet.iterator();
+        while (iterable.hasNext()) {
+            System.out.println(iterable.next());
+        }
     }
 
     private static void differenceImplementationsSets() {

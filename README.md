@@ -21,3 +21,7 @@ learning
         1) multithreading - different cases of creating parallel work
    1) memoryManagment
    1) patterns - GOF patterns https://refactoring.guru/design-patterns/catalog
+
+## TODO list
+1) Divide on modules
+1) Fix maven 'verify'

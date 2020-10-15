@@ -37,6 +37,7 @@ class FunctionInterfacesTest {
 
         Predicate<String> isEmpty = String::isEmpty;
         Predicate<String> isNotEmpty = isEmpty.negate();
+        Predicate<Integer> isEven = (integer -> integer % 2 == 0);
     }
 
     @Test
