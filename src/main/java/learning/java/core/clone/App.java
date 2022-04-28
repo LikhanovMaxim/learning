@@ -4,91 +4,86 @@ package learning.java.core.clone;
  * @author Maksim_Likhanov
  */
 public class App {
-	public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Manager manager = new Manager();
 
-		Manager manager = new Manager();
+        Bean b = new Bean();
+        b.setA(2);
+        //		b.setB("ads");
 
-		Bean b = new Bean();
-		b.setA(2);
-		//		b.setB("ads");
+        manager.setBean(b);
 
-		manager.setBean(b);
+        Bean c = new Bean();
+        c.setA(4);
+        c.setB("sadasdas");
 
-		Bean c = new Bean();
-		c.setA(4);
-		c.setB("sadasdas");
+        //TODO copy c to b
+        //		b = (Bean) c.clone(); // не подходит
 
-		//TODO copy c to b
-		//		b = (Bean) c.clone(); // не подходит
+        //		SerializationUtils.clone()
 
-		//		SerializationUtils.clone()
+        System.out.println(b.getA());
+        System.out.println(b.getB());
 
-		System.out.println(b.getA());
-		System.out.println(b.getB());
+        System.out.println(manager.getBean().getA());
+        System.out.println(manager.getBean().getB());
 
-		System.out.println(manager.getBean().getA());
-		System.out.println(manager.getBean().getB());
-
-	}
+    }
 
 }
 
 class Manager {
-	String str;
-	Bean bean;
+    String str;
+    Bean bean;
 
-	public Bean getBean() {
-		return bean;
-	}
+    public Bean getBean() {
+        return bean;
+    }
 
-	public void setBean(Bean bean) {
-		this.bean = bean;
-	}
+    public void setBean(Bean bean) {
+        this.bean = bean;
+    }
 
-	public String getStr() {
+    public String getStr() {
 
-		return str;
-	}
+        return str;
+    }
 
-	public void setStr(String str) {
-		this.str = str;
-	}
+    public void setStr(String str) {
+        this.str = str;
+    }
 }
 
 class Bean implements Cloneable {
-	Integer a;
+    Integer a;
+    private String b;
 
-	Bean() {
-	}
+    Bean() {
+    }
 
-	;
+    Bean(Bean copy) {
+        a = copy.getA();
+        b = copy.getB();
+    }
 
-	Bean(Bean copy) {
-		a = copy.getA();
-		b = copy.getB();
-	}
+    public int getA() {
+        return a;
+    }
 
-	public int getA() {
-		return a;
-	}
+    public void setA(int a) {
+        this.a = a;
+    }
 
-	public void setA(int a) {
-		this.a = a;
-	}
+    public String getB() {
+        return b;
+    }
 
-	public String getB() {
-		return b;
-	}
+    public void setB(String b) {
+        this.b = b;
+    }
 
-	public void setB(String b) {
-		this.b = b;
-	}
-
-	private String b;
-
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
-
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

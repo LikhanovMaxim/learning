@@ -4,7 +4,7 @@ public class A {
     @PublicFinal
     private String a;
 
-    @Override
+    @Implement
     public String toString() {
         return super.toString();
     }

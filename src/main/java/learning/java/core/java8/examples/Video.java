@@ -2,6 +2,7 @@ package learning.java.core.java8.examples;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -12,8 +13,9 @@ public class Video {
         List<Integer> values = Arrays.asList(1, 2, 3, 5, 4, 6, 7, 8, 9, 10);
 
         oldWay(values);
+        Predicate<Integer> isGreaterThan3 = Video::isGreaterThan3;
         final Stream<Integer> stream = values.stream()
-                .filter(Video::isGreaterThan3)
+                .filter(isGreaterThan3)
                 .filter(Video::isEven)
                 .map(Video::doubleIt);
 

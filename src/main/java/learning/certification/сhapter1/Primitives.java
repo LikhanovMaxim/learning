@@ -15,7 +15,7 @@ public class Primitives {
 class $KilMe {
 	/*
 	Class names begin with an uppercase letter followed by CamelCase. Don’t start any
-	identifiers with $. The compiler uses this symbol for some fi les.
+	identifiers with $. The compiler uses this symbol for some files.
 	 */
 	public void findAnswer(boolean check) {
 		int answer;

@@ -8,16 +8,19 @@ import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.List;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 class PizzaTest {
 
     @Test
-    void name() {
+    void checkThatPizzaIsReadyToDeliver() {
         Pizza testPz = new Pizza();
         testPz.setStatus(Pizza.PizzaStatus.READY);
         assertTrue(testPz.isDeliverable());
+        assertFalse(testPz.getStatus().isDelivered());
+        assertFalse(testPz.getStatus().isOrdered());
     }
 
     @Test
