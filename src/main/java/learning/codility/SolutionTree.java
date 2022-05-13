@@ -11,7 +11,8 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Stack;
 
-class Solution {
+//TODO cannot check on https://app.codility.com/programmers/trainings/4/tree_height/ cause import
+class SolutionTree {
     int maxHighTree;
 
     public int solution(Tree T) {
