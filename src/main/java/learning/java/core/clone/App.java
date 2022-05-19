@@ -17,14 +17,15 @@ public class App {
         c.setA(4);
         c.setB("sadasdas");
 
-        //TODO copy c to b
-        //		b = (Bean) c.clone(); // не подходит
+        //TODO copy c to b.
+        // What is the task??
+//        b = (Bean) c.clone(); // не подходит
 
-        //		SerializationUtils.clone()
-
+        System.out.println("Bean b:");
         System.out.println(b.getA());
         System.out.println(b.getB());
 
+        System.out.println("Bean from manager:");
         System.out.println(manager.getBean().getA());
         System.out.println(manager.getBean().getB());
 

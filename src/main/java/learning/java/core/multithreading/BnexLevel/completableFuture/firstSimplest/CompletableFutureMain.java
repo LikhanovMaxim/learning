@@ -17,27 +17,28 @@ public class CompletableFutureMain {
         long started = System.currentTimeMillis();
 
         // configure CompletableFuture
-        CompletableFuture<Integer> futureCount = UtilsCompletableFuture.createCompletableFuture(5000L);
-        CompletableFuture<Integer> futureCount2 = UtilsCompletableFuture.createCompletableFuture(2000L);
+        CompletableFuture<Long> futureCount = UtilsCompletableFuture.createCompletableFuture(5_000L);
+        CompletableFuture<Long> futureCount2 = UtilsCompletableFuture.createCompletableFuture(2_000L);
 
         // continue to do other work
-        System.out.println("Took " + (started - System.currentTimeMillis()) + " milliseconds");
+        logCurrentTime("Took ", started);
 
         // now its time to get the result
         try {
-
-            int count = futureCount.get();
-            System.out.println("CompletableFuture took " + (started - System.currentTimeMillis()) + " milliseconds");
-
+            Long count = futureCount.get();
+            logCurrentTime("CompletableFuture took ", started);
             System.out.println("Result " + count);
 
-            int count2 = futureCount2.get();
-            System.out.println("CompletableFuture2 took " + (started - System.currentTimeMillis()) + " milliseconds");
+            Long count2 = futureCount2.get();
+            logCurrentTime("CompletableFuture2 took ", started);
             System.out.println("Result " + count2);
-
         } catch (InterruptedException | ExecutionException ex) {
             // Exceptions from the future should be handled here
         }
+    }
+
+    private static void logCurrentTime(String message, long started) {
+        System.out.println(message + (System.currentTimeMillis() - started) + " milliseconds");
     }
 
 

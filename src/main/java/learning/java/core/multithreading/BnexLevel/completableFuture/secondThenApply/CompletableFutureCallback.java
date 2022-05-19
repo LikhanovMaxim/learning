@@ -46,7 +46,7 @@ public class CompletableFutureCallback {
 
     private static String getObject() {
         if (true)
-            throw new RuntimeException("eba");
+            throw new RuntimeException("happens exception");
         return "sd";
     }
 
@@ -71,7 +71,7 @@ public class CompletableFutureCallback {
 
     private static CompletableFuture<String> getStringCompletableFuture() {
         return UtilsCompletableFuture.createCompletableFuture(SLEEP)
-                .thenApply((Integer count) -> count * 10)
+                .thenApply((Long count) -> count * 10)
                 .thenApply(transformed -> "Finally creates a string: " + transformed);
     }
 
@@ -80,7 +80,7 @@ public class CompletableFutureCallback {
         try {
             System.out.println(data.get());
         } catch (InterruptedException | ExecutionException e) {
-
+            System.out.println(e.getStackTrace());
         }
         System.out.println("CompletableFuture took " + (System.currentTimeMillis() - started) + " milliseconds");
     }
@@ -92,7 +92,7 @@ public class CompletableFutureCallback {
         long started = System.currentTimeMillis();
 
         CompletableFuture<String> data = UtilsCompletableFuture.createCompletableFuture(SLEEP)
-                .thenApplyAsync((Integer count) -> count * 10)
+                .thenApplyAsync((Long count) -> count * 10)
                 .thenApplyAsync(transformed -> "Finally creates a string: " + transformed);
 
         getDataAndLog(started, data);

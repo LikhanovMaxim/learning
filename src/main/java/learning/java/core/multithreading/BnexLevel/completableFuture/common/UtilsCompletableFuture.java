@@ -4,15 +4,17 @@ import java.util.concurrent.CompletableFuture;
 
 public class UtilsCompletableFuture {
 
-    public static CompletableFuture<Integer> createCompletableFuture(Long millis) {
-        CompletableFuture<Integer> futureCount = CompletableFuture.supplyAsync(
+    public static CompletableFuture<Long> createCompletableFuture(Long millis) {
+        System.out.println(Thread.currentThread() + " createCompletableFuture " + millis);
+        CompletableFuture<Long> futureCount = CompletableFuture.supplyAsync(
                 () -> {
                     try {
                         // simulate long running task
+                        System.out.println(Thread.currentThread() + " createCompletableFuture sleep " + millis + "...");
                         Thread.sleep(millis);
-                    } catch (InterruptedException e) {
+                    } catch (InterruptedException ignored) {
                     }
-                    return 20;
+                    return millis/1000;
                 });
         return futureCount;
     }

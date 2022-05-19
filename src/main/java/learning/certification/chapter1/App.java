@@ -1,4 +1,4 @@
-package learning.certification.сhapter1;
+package learning.certification.chapter1;
 
 class App {
 	public static void main(String[] args) {

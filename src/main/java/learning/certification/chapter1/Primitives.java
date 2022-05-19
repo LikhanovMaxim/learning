@@ -1,4 +1,4 @@
-package learning.certification.сhapter1;
+package learning.certification.chapter1;
 import java.lang.reflect.Array;
 
 
@@ -7,7 +7,9 @@ public class Primitives {
 
 	public static void main(String[] args) {
 		int amount = 0b101;
-		int amount2 = 0b101;
+		int amount2 = 0b11;
+		System.out.println("101 binary = " + amount);
+		System.out.println(amount2);
 		Array t;
 	}
 }

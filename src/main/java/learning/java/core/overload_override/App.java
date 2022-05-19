@@ -27,7 +27,7 @@ class B extends App {
 		System.out.println("from B");
 	}
 
-	//TODO: This is overloading
+	//This is overloading
 	public void pat(int a) {
 		System.out.println("pat from B because we have overloaded it");
 	}

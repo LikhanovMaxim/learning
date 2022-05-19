@@ -1,4 +1,4 @@
-package learning.certification.сhapter2;
+package learning.certification.chapter2;
 
 public class Statments {
 

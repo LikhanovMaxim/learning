@@ -15,9 +15,9 @@ public class MainCallableFuturesAndPool {
     private static final int NTHREDS = 10;
 
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
+            ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
         List<Future<Long>> list = new ArrayList<>();
-        for (int i = 0; i < 20000; i++) {
+        for (int i = 0; i < 20_000; i++) {
             Callable<Long> worker = new MyCallable();
             Future<Long> submit = executor.submit(worker);
             list.add(submit);
@@ -28,9 +28,7 @@ public class MainCallableFuturesAndPool {
         for (Future<Long> future : list) {
             try {
                 sum += future.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
         }

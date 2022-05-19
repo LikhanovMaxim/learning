@@ -2,6 +2,9 @@ package learning.java.core.multithreading.jmm;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 class HappensBeforeTest {
 
 
@@ -14,7 +17,9 @@ class HappensBeforeTest {
     @Test
     void shouldBeDiffOutput() throws InterruptedException {
         HappensBefore happensBefore = new HappensBefore();
-        for (int i = 0; i < 100; i++)
-            happensBefore.example();
+        for (int i = 0; i < 100; i++) {
+            String example = happensBefore.example();
+//            assertEquals("", example);
+        }
     }
 }
