@@ -36,6 +36,7 @@ class SolutionPositiveDigree {
                 break;
             }
         }
+        Tree tree ;
         return res;
     }
 }

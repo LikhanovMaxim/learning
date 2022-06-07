@@ -15,7 +15,7 @@ class ValueSumCounterTest {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         Integer result = forkJoinPool.invoke(counter);
         System.out.println(result);
-        assertEquals(3*capacity, result);
+        assertEquals(3 * capacity, result);
     }
 
     private int[] getInitArr(int i) {

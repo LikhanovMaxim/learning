@@ -7,5 +7,6 @@ public class App {
 
         StaticClass staticClass = new StaticClass();
         staticClass.showCount();
+        staticClass.doIt();
     }
 }

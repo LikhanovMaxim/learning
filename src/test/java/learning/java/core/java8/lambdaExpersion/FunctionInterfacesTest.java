@@ -3,11 +3,14 @@ package learning.java.core.java8.lambdaExpersion;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -76,6 +79,18 @@ class FunctionInterfacesTest {
         Function<Integer, Integer> s = Utility::calc;
         Integer res = s.apply(23);
         assertEquals(230, res);
+    }
+    @Test
+    void reduce() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        int result = numbers
+                .stream()
+                .reduce(0, (subtotal, element) -> subtotal + element);
+        assertEquals(result, 21);
+
+        String res = Stream.of("a", "b", "c", "d", "e")
+                .reduce("start: ", (accumulator, newElement) -> accumulator + newElement);
+        assertEquals(res, "start: abcde");
     }
 
     /**TODO

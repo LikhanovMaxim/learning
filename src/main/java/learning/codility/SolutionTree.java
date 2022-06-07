@@ -9,6 +9,8 @@ package learning.codility;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 //TODO cannot check on https://app.codility.com/programmers/trainings/4/tree_height/ cause import
@@ -17,14 +19,14 @@ class SolutionTree {
 
     public int solution(Tree T) {
         maxHighTree = 0;
-        Stack<Pair<Tree, Integer>> stack = new Stack<>();
+        Deque<Pair<Tree, Integer>> stack = new ArrayDeque<>();
 //        Pair pair = new Pair(T, 0);
         push(stack, T, 0);
         findInDeep(stack);
         return maxHighTree;
     }
 
-    private void findInDeep(Stack<Pair<Tree, Integer>> stack) {
+    private void findInDeep(Deque<Pair<Tree, Integer>> stack) {
         if (stack.isEmpty()) {
             return;
         }
@@ -43,7 +45,7 @@ class SolutionTree {
         findInDeep(stack);
     }
 
-    private void push(Stack<Pair<Tree, Integer>> stack, Tree cursor, int highTree) {
+    private void push(Deque<Pair<Tree, Integer>> stack, Tree cursor, int highTree) {
         stack.push(Pair.of(cursor, highTree));
     }
 }

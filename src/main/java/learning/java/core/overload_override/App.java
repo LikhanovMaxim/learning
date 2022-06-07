@@ -10,6 +10,10 @@ public class App {
 		b.bla();
 		b.pat(1);
 		b.pat();
+
+		System.out.println("static:");
+		App.doIt();
+		B.doIt();
 	}
 
 	public void bla() {
@@ -19,6 +23,10 @@ public class App {
 	public void pat() {
 		System.out.println("pat from Firest");
 	}
+	static void doIt() {
+		System.out.println("I have done it!");
+	}
+
 }
 
 class B extends App {
@@ -30,6 +38,13 @@ class B extends App {
 	//This is overloading
 	public void pat(int a) {
 		System.out.println("pat from B because we have overloaded it");
+	}
+
+	static void doIt() {
+		System.out.println("Another I have done it!");
+	}
+	void doIt(int a) {
+		System.out.println("Another I have done it!");
 	}
 
 }

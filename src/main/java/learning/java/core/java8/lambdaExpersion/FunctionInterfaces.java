@@ -12,6 +12,7 @@ public class FunctionInterfaces {
 
 
     Function<String, String> takeFunction() {
+//        Function<String, Integer> toInteger = s -> Integer.valueOf(s);
         Function<String, Integer> toInteger = Integer::valueOf;
         return toInteger.andThen(num -> {
             num = num + 100;

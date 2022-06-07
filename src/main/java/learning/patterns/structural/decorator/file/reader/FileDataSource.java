@@ -29,7 +29,7 @@ public class FileDataSource implements DataSource {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        assert buffer != null;
+        assert buffer != null : "cannot readData buffer is null";
         return new String(buffer);
     }
 }

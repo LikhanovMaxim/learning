@@ -9,6 +9,12 @@ public class App {
 
     public static void main(String[] args) {
         instanseof1();
+
+        System.out.println("strings:");
+        System.out.println("23" == "23");
+        String s = new String("23");//for buffers when read bytes
+        System.out.println("23" == s);
+        System.out.println("23" == s.intern());
     }
 
     public void CastingPrimitiveValues() {
