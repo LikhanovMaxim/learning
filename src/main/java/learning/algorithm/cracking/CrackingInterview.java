@@ -1,4 +1,4 @@
-package learning.codility.cracking;
+package learning.algorithm.cracking;
 
 public class CrackingInterview {
 

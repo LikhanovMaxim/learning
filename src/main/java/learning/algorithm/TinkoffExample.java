@@ -1,4 +1,4 @@
-package learning.codility;
+package learning.algorithm;
 
 /**
  * https://github.com/Tinkoff/career/blob/main/interview/sections/programming.md

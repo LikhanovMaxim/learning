@@ -1,9 +1,8 @@
-package learning.codility.yandex;
+package learning.algorithm.array;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayUnionAndIntersect {
+public class ArrayUnionAndIntersectYandex {
 
 
     //пересечения двух массивов найти.

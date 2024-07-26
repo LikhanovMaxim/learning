@@ -1,4 +1,4 @@
-package learning.codility.cracking;
+package learning.algorithm.cracking;
 
 import org.junit.jupiter.api.Test;
 

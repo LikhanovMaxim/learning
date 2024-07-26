@@ -1,4 +1,4 @@
-package learning.codility.yandex;
+package learning.algorithm.yandex;
 
 import org.junit.jupiter.api.Test;
 

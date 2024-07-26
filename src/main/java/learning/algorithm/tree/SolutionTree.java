@@ -1,4 +1,4 @@
-package learning.codility;
+package learning.algorithm.tree;
 
 // you can also use imports, for example:
 // import java.util.*;
@@ -11,7 +11,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 //TODO cannot check on https://app.codility.com/programmers/trainings/4/tree_height/ cause import
 class SolutionTree {

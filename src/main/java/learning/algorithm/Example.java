@@ -1,4 +1,4 @@
-package learning.codility;
+package learning.algorithm;
 
 
 import lombok.AllArgsConstructor;

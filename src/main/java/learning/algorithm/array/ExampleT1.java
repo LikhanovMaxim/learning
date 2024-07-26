@@ -1,10 +1,7 @@
-package learning.codility;
+package learning.algorithm.array;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class ExampleT1 {
@@ -18,26 +15,13 @@ public class ExampleT1 {
      *
      * @param args
      */
-    public static void main(String[] args) {
-//        int receipt = 10;
-//        List<Integer> wallet = new ArrayList<>();
-//        wallet.add(50);
-//        wallet.add(10);
-//        wallet.add(5);
-//        wallet.add(2);
-//        wallet.add(7);
-//        wallet.add(3);
-//        wallet.add(1);
-
-//        findIdealBanknotes(receipt, wallet);
-    }
 
     /**
-     * * прозодим по листу
+     * * проходим по листу
      * * проверяем есть ли совпадение
      * * кладем в коллекцию
      */
-    static Integer findIdealBanknotes(int receipt, List<Integer> wallet) {
+    public static Integer findIdealBanknotes(int receipt, List<Integer> wallet) {
         Set<Integer> needToIndex = new HashSet<>();
         int result = -1;
         for (Integer current : wallet) {

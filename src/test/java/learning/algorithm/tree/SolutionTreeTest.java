@@ -1,4 +1,4 @@
-package learning.codility;
+package learning.algorithm.tree;
 
 import org.junit.jupiter.api.Test;
 

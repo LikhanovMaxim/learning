@@ -1,9 +1,9 @@
-package learning.codility.algorithmic;
+package learning.algorithm.array;
 
 /**
  * https://app.codility.com/programmers/trainings/4/array_inversion_count/
  */
-public class Solution {
+public class SolutionCodility {
 
 
     //todo need to change to A[P]>A[Q]

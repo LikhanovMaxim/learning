@@ -1,4 +1,5 @@
-package learning.codility;
+package learning.algorithm;
+
 
 /**
  * https://app.codility.com/programmers/trainings/5/parity_degree/
@@ -36,7 +37,6 @@ class SolutionPositiveDigree {
                 break;
             }
         }
-        Tree tree ;
         return res;
     }
 }

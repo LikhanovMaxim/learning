@@ -1,10 +1,9 @@
-package learning.codility.cracking;
+package learning.algorithm.strings;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.ListIterator;
 
-public class StringArrayExamples {
+public class StringArrayExamplesCracking {
 
 
     public static void main(String[] args) {
