@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 public class StreamExample {
     public static void main(String[] args) {
+        test();
         newExamples();
 //        createStreams();
 
@@ -27,6 +28,21 @@ public class StreamExample {
         ads();
 //        intermediate();
     }
+
+    public static void test() {
+        boolean b = Stream.of("d2", "a2", "b1", "c")
+                .map(s -> {
+                    System.out.println(s);
+                    return s.toUpperCase();
+                })
+                .anyMatch(s -> {
+                            System.out.println(s);
+                            return s.startsWith("A");
+                        }
+                );
+        System.out.println(b);
+    }
+
 
     private static void newExamples() {
         //1
@@ -51,17 +67,17 @@ public class StreamExample {
         IntStream.range(1, 4)
                 .forEach(System.out::println);
 //        5
-        Arrays.stream(new int[] {1, 2, 3})
+        Arrays.stream(new int[]{1, 2, 3})
                 .map(n -> 2 * n + 1)
                 .average()
                 .ifPresent(System.out::println);  // 5.0
 
     }
 
-    private static void ads(){
+    private static void ads() {
         String[] strings = {"a1", "a2", "a3"};
         Stream<String> streamFromValues = Stream.of(strings);
-        streamFromValues.forEach((e)-> e="ads");
+        streamFromValues.forEach((e) -> e = "ads");
         System.out.println(strings[0]);
 //        TODO because string?
     }
@@ -73,7 +89,7 @@ public class StreamExample {
         System.out.println(strings);
     }
 
-    private static void intermediate(){
+    private static void intermediate() {
         Stream<String> streamFromValues = Stream.of("a1", "a2", "a3");
         Stream<String> newStream = streamFromValues.map(String::toUpperCase);
         System.out.println(newStream.toArray()[0]);
@@ -86,7 +102,7 @@ public class StreamExample {
 
         Stream<String> streamFromValues = Stream.of("a1", "a2", "a3");
 
-        String[] array = {"a1","a2","a3"};
+        String[] array = {"a1", "a2", "a3"};
         Stream<String> streamFromArrays = Arrays.stream(array);
 
 
