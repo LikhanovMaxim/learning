@@ -7,7 +7,7 @@ public class StringArrayExamplesCracking {
 
 
     public static void main(String[] args) {
-
+        System.out.println(Integer.MAX_VALUE);
         LinkedList<String> list = new LinkedList<>();
         list.add("1");
         list.add("2");

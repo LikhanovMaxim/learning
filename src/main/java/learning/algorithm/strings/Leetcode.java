@@ -22,6 +22,7 @@ public class Leetcode {
         return x;
     }
 
+//    https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/
     //Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
 //    Input: s = "leetcode"
 //Output: 0
@@ -33,16 +34,23 @@ public class Leetcode {
             Integer orDefault = map.getOrDefault(cur, 0);
             map.put(cur, orDefault + 1);
         }
-        for (Map.Entry<Character, Integer> e : map.entrySet()) {
-            if (e.getValue() == 1) {
-                return s.indexOf(e.getKey());
+        //todo why does it work?
+//        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+//            if (e.getValue() == 1) {
+//                return s.indexOf(e.getKey());
+//            }
+//        }
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(charArray[i]) == 1) {
+                return i;
             }
         }
         return -1;
     }
 
 
-    //    Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+    //    Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1
+    //    if needle is not part of haystack.
 //    https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/885/
 //    Input: haystack = "sadbutsad", needle = "sad"
 //      Output: 0

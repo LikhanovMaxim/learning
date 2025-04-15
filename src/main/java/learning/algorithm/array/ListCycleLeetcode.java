@@ -20,7 +20,7 @@ public class ListCycleLeetcode {
         return false;
     }
 
-//    can I use this trick?
+//    todo can I use this trick?
     public boolean hasCycle(ListNode head) {
         while (head!=null && head.next != null) {
             head.val = Integer.MAX_VALUE;

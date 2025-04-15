@@ -20,7 +20,8 @@ class SmthTest {
     public void test3() {
         Solution solution = new Solution();
         int a = 100_000_000;
-        solution.solution(a, a);
+        int solution1 = solution.solution(a, a);
+        System.out.println(solution1);
     }
 
     @Test

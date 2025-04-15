@@ -7,6 +7,7 @@ public class PalindromeListLeetcode {
 
     //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/772/
     // List 1 2 3 2 1
+    // !!! Time Limit Exceeded
     public boolean isPalindrome1(ListNode head) {
         List<Integer> list = new LinkedList<>();
         while (head != null) {
@@ -29,7 +30,7 @@ public class PalindromeListLeetcode {
     // - from end and start equals
     // first  1 1
     // second 2 2
-    //without memory
+    //todo without memory
     public boolean isPalindrome(ListNode head) {
         //todo
         ListNode headTrue = head;
