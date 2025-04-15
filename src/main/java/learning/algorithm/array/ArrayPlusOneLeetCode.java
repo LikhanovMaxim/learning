@@ -5,6 +5,9 @@ public class ArrayPlusOneLeetCode {
     /**
      * @param digits
      * @return
+     * time: O(n)
+     * space: O(N). in bad case(2*O(N))
+     * todo use digits instead of creating res?
      */
     public int[] plusOne(int[] digits) {
         int[] res = new int[digits.length];
@@ -18,10 +21,9 @@ public class ArrayPlusOneLeetCode {
             } else res[i] = digits[i];
         }
         if (res[0] == 0) {
-            int[] ints = new int[res.length + 1];
-            ints[0] = 1;
-            System.arraycopy(res, 0, ints, 1, res.length);
-            return ints;
+            int[] result = new int[res.length + 1];
+            result[0] = 1;
+            return result;
         } else return res;
     }
 }

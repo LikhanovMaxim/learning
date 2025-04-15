@@ -44,7 +44,8 @@ public class Solution {
             maxSingle = "0";
         }
         maxSingle = maxDigit(countDigits, maxSingle);
-        return partPalindrome + maxSingle + partPalindrome.reverse();
+        String firstPart = partPalindrome.toString();
+        return firstPart + maxSingle + partPalindrome.reverse();
     }
 
     private StringBuilder findPartPalindrome(int[] countDigits) {
@@ -71,8 +72,7 @@ public class Solution {
     }
 
     private int[] calculateCountDigits(String S) {
-        int size = 10;
-        int[] countDigits = new int[size];
+        int[] countDigits = new int[10];
         for (int i = 0; i < S.length(); i++) {
             int index = S.charAt(i) - '0';
             countDigits[index]++;
