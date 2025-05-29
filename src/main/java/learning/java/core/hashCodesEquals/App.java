@@ -11,7 +11,25 @@ import java.util.*;
  */
 public class App {
     public static void main(String[] args) {
+        final Object obj1 = new Object();
+        final Object obj2 = new Object();
 
+        System.out.println(obj1.equals(obj2)); // 1
+        System.out.println(obj1 == obj2); // 2
+
+        final String str1 = new String("string");
+        final String str2 = new String("string");
+
+        System.out.println(str1.equals(str2)); // 3
+        System.out.println(str1 == str2);     // 4
+
+        final String str3 = "string";
+        final String str4 = "string";
+        final String str5 = "str" + "ing";
+
+        System.out.println(str3.equals(str4)); // 5
+        System.out.println(str3 == str4);     // 6
+        System.out.println(str3 == str5);     // 7
         System.out.println("Equals and hashCode:");
 //        equalsAndHashCode();
 

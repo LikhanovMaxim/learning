@@ -1,13 +1,13 @@
 package learning.algorithm.tree;
 
+/**
+ * Minimal Tree: Given a sorted (increasing order) array with unique integer elements,
+ * write an algorithm to create a binary search tree with minimal height.
+ * <p>
+ * and also leetcode https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/631/
+ */
 public class MinimalTreeCrackingInterview {
 
-    /**
-     * inimal Tree: Given a sorted (increasing order) array with unique integer elements,
-     * write an algorithm to create a binary search tree with minimal height.
-     * <p>
-     * and also leetcode https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/631/
-     */
     public TreeNode sortedArrayToBST(int[] nums) {
         return create(nums, 0, nums.length - 1);
     }

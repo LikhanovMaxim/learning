@@ -36,7 +36,7 @@ public class CheckArray {
 //
 //        # вывод
 //        champions = { userIds: [1, 2], steps: 5500 }
-//
+
 //        # Пример 3
 //statistics = [
 //        [{ userId: 1, steps: 2000 }, { userId: 2, steps: 1500 }],

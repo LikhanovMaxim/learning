@@ -1,13 +1,17 @@
-package learning.algorithm.array;
+package learning.algorithm.list;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/773/
+ */
 public class ListCycleLeetcode {
 
     //1 -> 2 -->1
-    //with memory.
+    //with memory. space O(N)
+    //time O(N)
     public boolean hasCycle1(ListNode head) {
         Set<ListNode> nodes = new HashSet<>();
         while (head != null && head.next != null) {
@@ -20,9 +24,14 @@ public class ListCycleLeetcode {
         return false;
     }
 
-//    todo can I use this trick?
+    /**
+     * time O(N)
+     * space O(1)
+     * @param head
+     * @return
+     */
     public boolean hasCycle(ListNode head) {
-        while (head!=null && head.next != null) {
+        while (head != null && head.next != null) {
             head.val = Integer.MAX_VALUE;
             if (head.next.val == Integer.MAX_VALUE) {
                 return true;

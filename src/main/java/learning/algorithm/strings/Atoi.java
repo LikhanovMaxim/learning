@@ -1,7 +1,19 @@
 package learning.algorithm.strings;
 
-public class StringExample {
+public class Atoi {
+
+    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/884/
+    /*
+    todo new idea
+
+     */
     public int myAtoi(String s) {
+
+        return -1;
+    }
+
+    //todo smth strange. Maybe cause conditions in task
+    public int myAtoi2(String s) {
         StringBuilder res = new StringBuilder("");
         int result = 0;
         int multiple = 1;

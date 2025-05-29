@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 
 public class ContestExamples {
@@ -28,13 +30,13 @@ public class ContestExamples {
     }
 
     private static void solution(String j, String s) {
-        Set<String> jewelry = new HashSet<>();
+        Set<Character> jewelry = new HashSet<>();
         for (int i = 0; i < j.length(); i++) {
-            jewelry.add(String.valueOf(j.charAt(i)));
+            jewelry.add(j.charAt(i));
         }
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (jewelry.contains(String.valueOf(s.charAt(i)))) {
+            if (jewelry.contains(s.charAt(i))) {
                 count++;
             }
         }

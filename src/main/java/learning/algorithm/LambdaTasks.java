@@ -3,7 +3,7 @@ package learning.algorithm;
 import java.util.Comparator;
 import java.util.List;
 
-public class Mts {
+public class LambdaTasks {
     private static int i = 0;
 
     public static void main(String[] args) {

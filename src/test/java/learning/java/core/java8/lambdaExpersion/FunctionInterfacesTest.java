@@ -3,6 +3,7 @@ package learning.java.core.java8.lambdaExpersion;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,9 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /*
 A Java lambda expression is thus a function which can be created without belonging to any class.
@@ -46,7 +49,7 @@ class FunctionInterfacesTest {
     @Test
     void function2() {
         Function<String, String> up = String::toUpperCase;
-        assertEquals(up.apply("asd"), "ASD");
+        assertEquals("ASD", up.apply("asd"));
     }
 
     @Test
@@ -80,17 +83,79 @@ class FunctionInterfacesTest {
         Integer res = s.apply(23);
         assertEquals(230, res);
     }
+
     @Test
     void reduce() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
         int result = numbers
                 .stream()
                 .reduce(0, (subtotal, element) -> subtotal + element);
-        assertEquals(result, 21);
+        assertEquals(21, result);
 
         String res = Stream.of("a", "b", "c", "d", "e")
                 .reduce("start: ", (accumulator, newElement) -> accumulator + newElement);
-        assertEquals(res, "start: abcde");
+        assertEquals("start: abcde", res);
+    }
+
+    //Получить сумму чисел или вернуть 0
+    @Test
+    void sum() {
+        List<Integer> numbers = Arrays.asList(1, 2, 3);
+        int sum = numbers
+                .stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+        assertEquals(6, sum);
+
+        int sumOdd = numbers
+                .stream()
+                .mapToInt(Integer::intValue)
+                .filter(e -> e % 2 == 1)
+                .sum();
+        assertEquals(4, sumOdd);
+    }
+
+    //Вернуть максимум или -1
+    @Test
+    void max() {
+        List<Integer> numbers = Arrays.asList(1, 3, 2);
+        int max = numbers
+                .stream()
+                .mapToInt(Integer::intValue)
+                .max().orElse(-1);
+        assertEquals(3, max);
+    }
+
+
+    //    @Test // ConcurrentModificationException
+    void modifyStream1() {
+        List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
+        list.stream().forEach(x -> {
+            if (x.equals("C")) {
+                list.remove(x);
+            }
+        });
+    }
+
+//    @Test //NPE
+    void modifyStream2() {
+        List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C"));
+        list.stream().forEach(x -> {
+            if (x.equals("A")) {
+                list.remove(x);
+            }
+        });
+
+//        ConcurrentModificationException
+//        for (String e : list) {
+//            if (e.equals("A")) {
+//                list.remove(e);
+//            }
+//        }
+
+        //use it:
+        list.removeIf(x -> x.equals("A"));
+        System.out.println(list);
     }
 
     /**TODO

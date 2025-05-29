@@ -1,9 +1,64 @@
-package learning.algorithm.array;
+package learning.algorithm.list;
 
+// https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
 public class ReverseListLeetcode {
 
-    // https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
+    /**
+     * Without recursive
+     * Input: head = [1,2,3,4,5]
+     * Output: [5,4,3,2,1]
+     * <p>
+     * Input: head = [1->null,2]
+     * Output: [2,1]
+     * [1,2,3] -> [3,2,1]
+     * head
+     * next
+     * prev=null
+     * while (head.next!=null)
+     * next=head.next;
+     * head.next=null/prev
+     * prev=head;
+     * head=next;
+     *
+     * [1,2,3]
+     * [3,2,1]
+     *
+     * [1,2]
+     * head 1, 2
+     * prev null, 1
+     * next 2
+     * [1->null,
+     * @param head
+     * @return
+     */
+    public ListNode reverseList2(ListNode head) {
+        ListNode prev = null;
+        ListNode nextNode;
+        while (head != null) {
+            nextNode = head.next;
+            head.next = prev;
+            prev = head;
+            head = nextNode;
+        }
+        return prev;
+    }
 
+    //рекурсивно
+    public ListNode reverseListRec(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        return reverseListRec2(null, head);
+    }
+
+    public ListNode reverseListRec2(ListNode prev, ListNode head) {
+        if (head == null) {
+            return prev;
+        }
+        ListNode next = head.next;
+        head.next = prev;
+        return reverseListRec2(head, next);
+    }
 
     //на каждом этапе переворачиваем связь. Рекурсивно.
     // 1 -> 2

@@ -31,23 +31,68 @@ public class Leetcode {
         char[] charArray = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
             char cur = charArray[i];
-            Integer orDefault = map.getOrDefault(cur, 0);
-            map.put(cur, orDefault + 1);
+            map.put(cur, map.getOrDefault(cur, 0) + 1);
         }
-        //todo why does it work?
-//        for (Map.Entry<Character, Integer> e : map.entrySet()) {
-//            if (e.getValue() == 1) {
-//                return s.indexOf(e.getKey());
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            if (e.getValue() == 1) {
+                return s.indexOf(e.getKey());
+            }
+        }
+//        for (int i = 0; i < s.length(); i++) {
+//            if (map.get(charArray[i]) == 1) {
+//                return i;
 //            }
 //        }
-        for (int i = 0; i < s.length(); i++) {
-            if (map.get(charArray[i]) == 1) {
-                return i;
+        return -1;
+    }
+
+    /*
+    cases:
+    sasad sad
+    s, s
+    s, f
+    0) bruteforce
+    1)
+    first i by str
+    second j by needle
+    fori
+        while(j<needle.length){
+            equals?
+                i++ j++
+            else j=0 break
+        }
+        if(j==needle.length)
+            return i-needle.length
+     return -1
+     time O(N + M)
+     space O(
+
+     "mississippi"
+         "issip"
+     */
+    public int strStr(String haystack, String needle) {
+        //todo нужно ещё добавить Longest Prefix Suffix
+        // почти алгоритм Кнута-Морриса-Пратта (KMP).
+        for (int i = 0; i < haystack.length(); i++) {
+            int j = 0;
+            while (j < needle.length() && i < haystack.length()) {
+                if (haystack.charAt(i) == needle.charAt(j)) {
+                    i++;
+                    j++;
+                } else {
+                    if (j == 0){
+                        i++;
+                    } else {
+                        j = 0;
+                    }
+                }
+            }
+            if (j == needle.length()){
+                return i - j;
             }
         }
         return -1;
     }
-
 
     //    Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1
     //    if needle is not part of haystack.
@@ -55,7 +100,9 @@ public class Leetcode {
 //    Input: haystack = "sadbutsad", needle = "sad"
 //      Output: 0
 //    ssad
-    public int strStr(String haystack, String needle) {
+//    time O(N * M)
+    //space O(N+M). why convert to charArray??
+    public int strStr2(String haystack, String needle) {
         char[] hay = haystack.toCharArray();
         char[] needleCharArray = needle.toCharArray();
         for (int i = 0; i < hay.length; i++) {

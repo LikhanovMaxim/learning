@@ -1,4 +1,4 @@
-package learning.algorithm.array;
+package learning.algorithm.list;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,12 +9,12 @@ class ListCycleLeetcodeTest {
 
     @Test
     void cycle() {
-        assertEquals(true, leetcode.hasCycle(leetcode.testData()));
+        assertTrue(leetcode.hasCycle(leetcode.testData()));
     }
 
     @Test
     void cycleNo() {
-        assertEquals(false, leetcode.hasCycle(leetcode.testData2()));
+        assertFalse(leetcode.hasCycle(leetcode.testData2()));
     }
 
 }

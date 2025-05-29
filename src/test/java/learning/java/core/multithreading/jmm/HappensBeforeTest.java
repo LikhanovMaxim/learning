@@ -19,6 +19,7 @@ class HappensBeforeTest {
         HappensBefore happensBefore = new HappensBefore();
         for (int i = 0; i < 100; i++) {
             String example = happensBefore.example();
+            System.out.println(example);
 //            assertEquals("", example);
         }
     }

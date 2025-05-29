@@ -1,4 +1,4 @@
-package learning.algorithm.array;
+package learning.algorithm.list;
 
 public class ListDeleteNodeLeetcode {
 
@@ -13,6 +13,7 @@ public class ListDeleteNodeLeetcode {
      * Output: [4,5,9]
      *
      * Easy solution:
+     * shift all
      * @param node
      */
     public void deleteNode2(ListNode node) {
@@ -27,7 +28,7 @@ public class ListDeleteNodeLeetcode {
     }
 
 
-    //Better solution:
+    //Better solution(swap and delete next):
     public void deleteNode(ListNode node) {
         ListNode next = node.next;
         node.val = next.val;

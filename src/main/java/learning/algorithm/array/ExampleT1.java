@@ -11,7 +11,7 @@ public class ExampleT1 {
      * value = {int > 0}
      * <p>
      * sum = 2 банкноты +
-     * account=10 [50 10 5 2 7 3 ]
+     * account= 10 [50 10 5 2 7 3 ]
      *
      * @param args
      */
@@ -19,22 +19,20 @@ public class ExampleT1 {
     /**
      * * проходим по листу
      * * проверяем есть ли совпадение
-     * * кладем в коллекцию
+     * * кладем в коллекцию банкноту которую нужно найти
+     * time O(N)
+     * space O(N)
      */
     public static Integer findIdealBanknotes(int receipt, List<Integer> wallet) {
         Set<Integer> needToIndex = new HashSet<>();
-        int result = -1;
         for (Integer current : wallet) {
             if (needToIndex.contains(current)) {
                 System.out.println("Found " + current + " and " + (receipt - current));
-                result = current;
-                break;
+                return current;
             }
             needToIndex.add(receipt - current);
         }
-        if (result == -1) {
-            System.out.println("Cannot find banknotes for " + receipt);
-        }
-        return result;
+        System.out.println("Cannot find banknotes for " + receipt);
+        return -1;
     }
 }

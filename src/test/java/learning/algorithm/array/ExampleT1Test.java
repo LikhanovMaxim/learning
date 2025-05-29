@@ -20,7 +20,14 @@ class ExampleT1Test {
         wallet.add(7);
         wallet.add(3);
         wallet.add(1);
-        Integer res = ExampleT1.findIdealBanknotes(receipt, wallet);
-        assertEquals(3, res);
+        assertEquals(3, ExampleT1.findIdealBanknotes(receipt, wallet));
+    }
+
+    @Test
+    public void test2() {
+        int receipt = 10;
+        List<Integer> wallet = new ArrayList<>();
+        wallet.add(10);
+        assertEquals(-1, ExampleT1.findIdealBanknotes(receipt, wallet));
     }
 }

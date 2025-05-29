@@ -1,8 +1,9 @@
 package learning.algorithm.array;
 
-import java.util.HashMap;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.List;
 import java.util.Set;
 
 public class Leetcode {
@@ -10,7 +11,8 @@ public class Leetcode {
      * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
      *
      * @param nums
-     * @return
+     * @return time: O(N) = (2N)
+     * space: O(N)
      */
     public int removeDuplicates(int[] nums) {
         Set<Integer> unique = new LinkedHashSet<>();
@@ -27,9 +29,12 @@ public class Leetcode {
 
     /**
      * by index
+     *    j - like unique;
+     * for i
+     *     compare i & j
      *
      * @param nums
-     * @return
+     * @return space O(1)
      */
     public int removeDuplicates2(int[] nums) {
         int j = 0;

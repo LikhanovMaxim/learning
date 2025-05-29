@@ -1,4 +1,4 @@
-package learning.algorithm.array;
+package learning.algorithm.list;
 
 import org.junit.jupiter.api.Test;
 
